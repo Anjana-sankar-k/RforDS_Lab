@@ -1,0 +1,47 @@
+//factors
+
+> gender <- c(1, 2, 1, 2, 1, 2, 1, 2)
+> gender <- factor(gender)
+> table(gender)
+gender
+1 2 
+4 4 
+> gender <- factor(gender, levels = c(1,2), labels = c("female", "male"))
+> table(gender)
+gender
+female   male 
+     4      4 
+
+//DataFrame
+
+> emp.data <- data.frame(emp_id = c(1:5), emp_name= c("Percy", "Annabeth", "Mingyu", "Joshua", "Jay"), salary= c(100, 2000, 300, 500, 10), start_date = as.Date(c("2020-01-01", "2022-03-10", "2022-10-10", "2025-03-04", "2025-07-08")), stringsAsFactors = FALSE)
+> print(emp.data)
+  emp_id emp_name salary start_date
+1      1    Percy    100 2020-01-01
+2      2 Annabeth   2000 2022-03-10
+3      3   Mingyu    300 2022-10-10
+4      4   Joshua    500 2025-03-04
+5      5      Jay     10 2025-07-08
+
+//Summary of data
+
+> print(summary(emp.data))
+     emp_id    emp_name             salary       start_date        
+ Min.   :1   Length:5           Min.   :  10   Min.   :2020-01-01  
+ 1st Qu.:2   Class :character   1st Qu.: 100   1st Qu.:2022-03-10  
+ Median :3   Mode  :character   Median : 300   Median :2022-10-10  
+ Mean   :3                      Mean   : 582   Mean   :2023-02-17  
+ 3rd Qu.:4                      3rd Qu.: 500   3rd Qu.:2025-03-04  
+ Max.   :5                      Max.   :2000   Max.   :2025-07-08 
+
+
+//Adding data
+> emp.data$dept <- c("Security", "Security", "Finance", "Creatives", "Artist management")
+> v <- emp.data
+> print(v)
+  emp_id emp_name salary start_date              dept
+1      1    Percy    100 2020-01-01          Security
+2      2 Annabeth   2000 2022-03-10          Security
+3      3   Mingyu    300 2022-10-10           Finance
+4      4   Joshua    500 2025-03-04         Creatives
+5      5      Jay     10 2025-07-08 Artist management
