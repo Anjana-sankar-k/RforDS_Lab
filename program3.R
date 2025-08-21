@@ -26,7 +26,7 @@ for (i in 1:num_students){
 
 cat("\nValid student records: \n")
 for (student in valid_students) {
-  cat(paste0("Name: ", student$name, " Age: ", student$age, " Grade: ", student$grade, "\n"))
+  cat(paste0("Name: ", student$name, " Age: ", student$age, " 2Grade: ", student$grade, "\n"))
 }
 
 if(length(valid_students) > 0){
